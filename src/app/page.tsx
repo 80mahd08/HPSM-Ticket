@@ -37,62 +37,52 @@ export default function Home() {
 	};
 
 	return (
-		<div>
+		<div className="home">
 			<h1>Home</h1>
 			<form onSubmit={handleSubmit}>
 				<div>
-					<label>
-						ID Ticket:
-						<input
-							type="text"
-							value={idTicket}
-							onChange={(e) => setIdTicket(e.target.value)}
-							required
-						/>
-					</label>
+					<label>ID Ticket:</label>
+					<input
+						type="text"
+						value={idTicket}
+						onChange={(e) => setIdTicket(e.target.value)}
+						required
+					/>
 				</div>
 				<div>
-					<label>
-						Domaine:
-						<input
-							type="text"
-							value={domaine}
-							onChange={(e) => setDomaine(e.target.value)}
-							required
-						/>
-					</label>
+					<label>Domaine:</label>
+					<input
+						type="text"
+						value={domaine}
+						onChange={(e) => setDomaine(e.target.value)}
+						required
+					/>
 				</div>
 				<div>
-					<label>
-						Type:
-						<input
-							type="text"
-							value={type}
-							onChange={(e) => setType(e.target.value)}
-							required
-						/>
-					</label>
+					<label>Type:</label>
+					<input
+						type="text"
+						value={type}
+						onChange={(e) => setType(e.target.value)}
+						required
+					/>
 				</div>
 				<div>
-					<label>
-						Place:
-						<input
-							type="text"
-							value={place}
-							onChange={(e) => setPlace(e.target.value)}
-							required
-						/>
-					</label>
+					<label>Place:</label>
+					<input
+						type="text"
+						value={place}
+						onChange={(e) => setPlace(e.target.value)}
+						required
+					/>
 				</div>
 				<div>
-					<label>
-						Date Ouverture:
-						<input
-							type="datetime-local"
-							value={dateOuverture}
-							onChange={(e) => setDateOuverture(e.target.value)}
-						/>
-					</label>
+					<label>Date Ouverture:</label>
+					<input
+						type="datetime-local"
+						value={dateOuverture}
+						onChange={(e) => setDateOuverture(e.target.value)}
+					/>
 				</div>
 				<button type="submit">Open Ticket</button>
 			</form>

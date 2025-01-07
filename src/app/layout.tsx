@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link"; // Import the Link component
+import "fhf/dist/normalize.css";
 
 export const metadata: Metadata = {
 	title: "Ticket HPSM",
@@ -20,16 +21,16 @@ export default function RootLayout({
 					<nav>
 						<ul>
 							<li>
-								<Link href="/">Home</Link>
+								<Link href="/">open</Link>
 							</li>
 							<li>
-								<Link href="/closeTicket">Close Ticket</Link>{" "}
+								<Link href="/closeTicket">Close</Link>{" "}
 							</li>
 							<li>
-								<Link href="/displayNoClose">display no close</Link>
+								<Link href="/displayNoClose">display</Link>
 							</li>
 							<li>
-								<Link href="displayChart">display chart</Link>
+								<Link href="displayChart">chart </Link>
 							</li>
 						</ul>
 					</nav>

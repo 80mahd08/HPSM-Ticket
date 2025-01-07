@@ -55,18 +55,16 @@ export default function DisplayChart() {
 			<h1>Display Chart</h1>
 			<form onSubmit={handleSubmit}>
 				<div>
-					<label>
-						Select Category:
-						<select
-							value={whatIsBy}
-							onChange={(e) =>
-								setWhatIsBy(e.target.value as "place" | "domaine" | "type")
-							}>
-							<option value="place">Place</option>
-							<option value="domaine">Domaine</option>
-							<option value="type">Type</option>
-						</select>
-					</label>
+					<label>Select Category:</label>
+					<select
+						value={whatIsBy}
+						onChange={(e) =>
+							setWhatIsBy(e.target.value as "place" | "domaine" | "type")
+						}>
+						<option value="place">Place</option>
+						<option value="domaine">Domaine</option>
+						<option value="type">Type</option>
+					</select>
 				</div>
 				<button type="submit">Submit</button>
 			</form>

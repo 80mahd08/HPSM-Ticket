@@ -13,8 +13,8 @@ export async function POST(request: Request) {
 				{
 					label: `Number of Tickets by ${whatIsBy}`,
 					data: chartData.chartDomaineCount,
-					backgroundColor: "rgba(75, 192, 192, 0.2)",
-					borderColor: "rgba(75, 192, 192, 1)",
+					backgroundColor: "rgb(187, 134, 252)",
+					borderColor: "rgb(224, 224, 224)",
 					borderWidth: 1,
 				},
 			],

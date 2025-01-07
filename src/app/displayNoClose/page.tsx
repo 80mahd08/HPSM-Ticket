@@ -1,5 +1,5 @@
 "use client";
-
+import "./style.css";
 import { useEffect, useState } from "react";
 
 type Ticket = {
@@ -34,23 +34,36 @@ export default function DisplayNoClose() {
 	}, []);
 
 	return (
-		<div>
+		<div className="display-no-close-container">
 			<h1>Tickets Not Closed</h1>
-			{error && <p style={{ color: "red" }}>{error}</p>}
+			{error && <p className="error">{error}</p>}
 			{tickets.length > 0 ? (
 				<ul>
 					{tickets.map((ticket) => (
 						<li key={ticket.idTicket}>
-							<p>ID Ticket: {ticket.idTicket}</p>
-							<p>Domaine: {ticket.domaine}</p>
-							<p>Type: {ticket.type}</p>
-							<p>Place: {ticket.place}</p>
-							<p>Date Ouverture: {ticket.dateOuverture?.toString()}</p>
+							<p>
+								<strong>ID Ticket:</strong> {ticket.idTicket}
+							</p>
+							<p>
+								<strong>Domaine:</strong> {ticket.domaine}
+							</p>
+							<p>
+								<strong>Type:</strong> {ticket.type}
+							</p>
+							<p>
+								<strong>Place:</strong> {ticket.place}
+							</p>
+							<p>
+								<strong>Date Ouverture:</strong>{" "}
+								{ticket.dateOuverture
+									? new Date(ticket.dateOuverture).toLocaleString()
+									: "N/A"}
+							</p>
 						</li>
 					))}
 				</ul>
 			) : (
-				<p>No tickets found</p>
+				<p className="no-tickets">No tickets found</p>
 			)}
 		</div>
 	);

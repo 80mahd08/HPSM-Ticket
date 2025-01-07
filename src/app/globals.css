@@ -1,109 +1,115 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li,
-form,
-input,
-button {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
+/* Dark Theme Style */
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
-	color: #333;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #121212;
+	color: #e0e0e0;
+	line-height: 1.6;
 }
 
 header {
-	background-color: #333;
-	color: #fff;
+	background-color: #1f1f1f;
+	color: #e0e0e0;
 	padding: 1rem 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul {
 	list-style: none;
 	display: flex;
 	justify-content: center;
+	padding: 0;
 }
 
 header nav ul li {
-	margin: 0 1rem;
+	margin: 0 1.5rem;
 }
 
 header nav ul li a {
-	color: #fff;
+	color: #e0e0e0;
 	text-decoration: none;
-	font-weight: bold;
+	font-weight: 600;
+	transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-	text-decoration: underline;
+	color: #bb86fc;
 }
 
 .container {
 	max-width: 800px;
 	margin: 2rem auto;
-	padding: 1rem;
-	background-color: #fff;
+	padding: 2rem;
+	background-color: #1f1f1f;
 	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 	text-align: center;
+	color: #bb86fc;
 }
 
 form {
 	display: flex;
 	flex-direction: column;
+	padding: 50px;
+	input {
+		width: 100%;
+	}
 }
 
 form div {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 form label {
 	display: block;
 	margin-bottom: 0.5rem;
-	font-weight: bold;
+	font-weight: 600;
+	color: #e0e0e0;
 }
 
 form input,
 form select,
 form button {
 	width: 100%;
-	padding: 0.5rem;
-	border: 1px solid #ccc;
+	padding: 0.75rem;
+	border: 1px solid #333;
 	border-radius: 4px;
+	font-size: 1rem;
+	background-color: #333;
+	color: rgb(224, 224, 224);
+	transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+	border-color: #bb86fc;
+	outline: none;
 }
 
 form button {
-	background-color: #333;
-	color: #fff;
+	background-color: #bb86fc;
+	color: #121212;
 	border: none;
 	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 form button:hover {
-	background-color: #555;
+	background-color: #9a67ea;
 }
 
 .error {
-	color: red;
+	color: #cf6679;
 	text-align: center;
 	margin-top: 1rem;
 }
 
 .chart-container {
 	margin-top: 2rem;
+}
+
+.home {
 }

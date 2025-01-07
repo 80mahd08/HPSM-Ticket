@@ -35,25 +35,21 @@ export default function CloseTicket() {
 			<h1>Close Ticket</h1>
 			<form onSubmit={handleSubmit}>
 				<div>
-					<label>
-						ID Ticket:
-						<input
-							type="text"
-							value={idTicket}
-							onChange={(e) => setIdTicket(e.target.value)}
-							required
-						/>
-					</label>
+					<label>ID Ticket:</label>
+					<input
+						type="text"
+						value={idTicket}
+						onChange={(e) => setIdTicket(e.target.value)}
+						required
+					/>
 				</div>
 				<div>
-					<label>
-						Date Fermeture:
-						<input
-							type="date"
-							value={dateFermeture}
-							onChange={(e) => setDateFermeture(e.target.value)}
-						/>
-					</label>
+					<label>Date Fermeture:</label>
+					<input
+						type="date"
+						value={dateFermeture}
+						onChange={(e) => setDateFermeture(e.target.value)}
+					/>
 				</div>
 				<button type="submit">Close Ticket</button>
 			</form>
