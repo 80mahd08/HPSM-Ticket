@@ -56,6 +56,7 @@ export default function DisplayChart() {
 			<form onSubmit={handleSubmit}>
 				<div>
 					<label>Select Category:</label>
+					<br />
 					<select
 						value={whatIsBy}
 						onChange={(e) =>

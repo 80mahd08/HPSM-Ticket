@@ -42,6 +42,7 @@ export default function Home() {
 			<form onSubmit={handleSubmit}>
 				<div>
 					<label>ID Ticket:</label>
+					<br />
 					<input
 						type="text"
 						value={idTicket}
@@ -51,6 +52,7 @@ export default function Home() {
 				</div>
 				<div>
 					<label>Domaine:</label>
+					<br />
 					<input
 						type="text"
 						value={domaine}
@@ -60,6 +62,7 @@ export default function Home() {
 				</div>
 				<div>
 					<label>Type:</label>
+					<br />
 					<input
 						type="text"
 						value={type}
@@ -69,6 +72,7 @@ export default function Home() {
 				</div>
 				<div>
 					<label>Place:</label>
+					<br />
 					<input
 						type="text"
 						value={place}
@@ -78,6 +82,7 @@ export default function Home() {
 				</div>
 				<div>
 					<label>Date Ouverture:</label>
+					<br />
 					<input
 						type="datetime-local"
 						value={dateOuverture}

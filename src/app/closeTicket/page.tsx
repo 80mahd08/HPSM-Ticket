@@ -36,6 +36,7 @@ export default function CloseTicket() {
 			<form onSubmit={handleSubmit}>
 				<div>
 					<label>ID Ticket:</label>
+					<br />
 					<input
 						type="text"
 						value={idTicket}
@@ -45,6 +46,7 @@ export default function CloseTicket() {
 				</div>
 				<div>
 					<label>Date Fermeture:</label>
+					<br />
 					<input
 						type="date"
 						value={dateFermeture}
