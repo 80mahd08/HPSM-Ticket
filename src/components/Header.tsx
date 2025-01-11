@@ -40,6 +40,28 @@ export default function Header() {
 					<span className="span-2"></span>
 					<span className="span-3"></span>
 				</div>
+				<div
+					className="menu-small"
+					style={{
+						display: isClicked ? "block" : "none",
+						position: "absolute",
+					}}>
+					{" "}
+					<ul>
+						<li>
+							<Link href="/">open</Link>
+						</li>
+						<li>
+							<Link href="/closeTicket">Close</Link>
+						</li>
+						<li>
+							<Link href="/displayNoClose">display</Link>
+						</li>
+						<li>
+							<Link href="/displayChart">chart</Link>
+						</li>
+					</ul>
+				</div>
 			</nav>
 		</header>
 	);

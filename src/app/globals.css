@@ -63,7 +63,15 @@ header nav .menu-icon.clicked {
 		display: none;
 	}
 }
-@media (max-width: 500px) {
+
+.menu-small {
+	left: 45%;
+	background-color: #1f1f1f;
+	ul {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
 }
 
 .container {
