@@ -4,15 +4,15 @@ import { afficherLesChartParDemande } from "@/action/action";
 export async function POST(request: Request) {
 	try {
 		const { whatIsBy } = await request.json();
-		const chartData = await afficherLesChartParDemande(whatIsBy);
+		const chartFinal = await afficherLesChartParDemande(whatIsBy);
 
 		// Format the data for Chart.js
 		const formattedData = {
-			labels: chartData.chartDomaine,
+			labels: chartFinal.chartData,
 			datasets: [
 				{
 					label: `Number of Tickets by ${whatIsBy}`,
-					data: chartData.chartDomaineCount,
+					data: chartFinal.chartDataCount,
 					backgroundColor: "rgb(187, 134, 252)",
 					borderColor: "rgb(224, 224, 224)",
 					borderWidth: 1,

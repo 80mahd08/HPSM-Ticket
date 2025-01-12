@@ -7,27 +7,31 @@ import Image from "next/image";
 
 export default function Header() {
 	const [isClicked, useIsClicked] = useState(false);
-	const isSmallStyle = useMediaStyle("(max-width: 500px)", { display: "none" });
-	const isLargeStyle = useMediaStyle("(min-width: 500px)", { display: "none" });
+	const isSmallStyle = useMediaStyle("(max-width: 600px)", { display: "none" });
+	const isLargeStyle = useMediaStyle("(min-width: 600px)", { display: "none" });
 
 	return (
 		<header>
 			<nav>
 				<ul>
+					<li>
+						<Image src={tuniTele} alt="Description" width={75} height={50} />
+					</li>
 					<li style={isSmallStyle}>
 						<Link href="/">open</Link>
 					</li>
 					<li style={isSmallStyle}>
 						<Link href="/closeTicket">Close</Link>
 					</li>
-					<li>
-						<Image src={tuniTele} alt="Description" width={75} height={50} />
-					</li>
+
 					<li style={isSmallStyle}>
 						<Link href="/displayNoClose">display</Link>
 					</li>
 					<li style={isSmallStyle}>
-						<Link href="displayChart">chart </Link>
+						<Link href="/displayChart">chart </Link>
+					</li>
+					<li style={isSmallStyle}>
+						<Link href={"/ticketSearch"}>search</Link>
 					</li>
 				</ul>
 				<div
@@ -59,6 +63,9 @@ export default function Header() {
 						</li>
 						<li>
 							<Link href="/displayChart">chart</Link>
+						</li>
+						<li>
+							<Link href={"/ticketSearch"}>search</Link>
 						</li>
 					</ul>
 				</div>

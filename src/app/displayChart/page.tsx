@@ -22,9 +22,7 @@ ChartJS.register(
 );
 
 export default function DisplayChart() {
-	const [whatIsBy, setWhatIsBy] = useState<"place" | "domaine" | "type">(
-		"domaine"
-	);
+	const [whatIsBy, setWhatIsBy] = useState<"place" | "type">("place");
 	const [chartData, setChartData] = useState<any>(null);
 	const [error, setError] = useState<string | null>(null);
 
@@ -59,11 +57,8 @@ export default function DisplayChart() {
 					<br />
 					<select
 						value={whatIsBy}
-						onChange={(e) =>
-							setWhatIsBy(e.target.value as "place" | "domaine" | "type")
-						}>
+						onChange={(e) => setWhatIsBy(e.target.value as "place" | "type")}>
 						<option value="place">Place</option>
-						<option value="domaine">Domaine</option>
 						<option value="type">Type</option>
 					</select>
 				</div>

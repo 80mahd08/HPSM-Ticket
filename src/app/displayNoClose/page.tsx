@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 type Ticket = {
 	idTicket: string;
-	domaine: string;
 	type: string;
 	place: string;
 	dateOuverture?: Date | null;
@@ -43,9 +42,6 @@ export default function DisplayNoClose() {
 						<li key={ticket.idTicket}>
 							<p>
 								<strong>ID Ticket:</strong> {ticket.idTicket}
-							</p>
-							<p>
-								<strong>Domaine:</strong> {ticket.domaine}
 							</p>
 							<p>
 								<strong>Type:</strong> {ticket.type}

@@ -3,7 +3,6 @@ import prisma from "@/lib/prisma";
 
 export type Ticket = {
 	idTicket: string;
-	domaine: string;
 	type: string;
 	place: string;
 	dateOuverture?: Date | null;
@@ -12,7 +11,6 @@ export type Ticket = {
 
 export async function ouvertureUnTicket({
 	idTicket,
-	domaine,
 	type,
 	place,
 	dateOuverture,
@@ -21,7 +19,6 @@ export async function ouvertureUnTicket({
 		await prisma.ticket.create({
 			data: {
 				idTicket,
-				domaine,
 				type,
 				place,
 				dateOuverture,
@@ -71,7 +68,7 @@ export async function affichetLesTicketNaPasFermet(): Promise<Ticket[]> {
 }
 
 export async function afficherLesChartParDemande(
-	whatIsBy: "place" | "domaine" | "type" = "domaine"
+	whatIsBy: "place" | "type" = "place"
 ) {
 	try {
 		// Group tickets by 'whatIsBy' and count the number of tickets in each group
@@ -83,15 +80,42 @@ export async function afficherLesChartParDemande(
 		});
 
 		// Extract 'whatIsBy' and their counts
-		const chartDomaine = result.map((item) => item[whatIsBy]);
-		const chartDomaineCount = result.map((item) => item._count.idTicket);
+		const chartData = result.map((item) => item[whatIsBy]);
+		const chartDataCount = result.map((item) => item._count.idTicket);
 
 		return {
-			chartDomaine,
-			chartDomaineCount,
+			chartData,
+			chartDataCount,
 		};
 	} catch (error) {
 		throw new Error("Impossible de récupérer les données pour les chartes");
 	}
 }
-// ...existing code...
+export async function searchTickets({
+	idTicket,
+	type,
+	place,
+	dateOuverture,
+	dateFermeture,
+}: {
+	idTicket?: string;
+	type?: string;
+	place?: string;
+	dateOuverture?: Date | null;
+	dateFermeture?: Date | null;
+}): Promise<Ticket[]> {
+	try {
+		const tickets = await prisma.ticket.findMany({
+			where: {
+				idTicket: idTicket ? { contains: idTicket } : undefined,
+				type: type ? { contains: type } : undefined,
+				place: place ? { contains: place } : undefined,
+				dateOuverture: dateOuverture ? { gte: dateOuverture } : undefined,
+				dateFermeture: dateFermeture ? { lte: dateFermeture } : undefined,
+			},
+		});
+		return tickets;
+	} catch (error) {
+		throw new Error("Impossible de rechercher les tickets");
+	}
+}

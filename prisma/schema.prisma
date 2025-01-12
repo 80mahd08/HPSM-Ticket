@@ -15,7 +15,6 @@ datasource db {
 
 model Ticket {
   idTicket      String    @id
-  domaine       String
   type          String
   place         String
   dateOuverture DateTime?

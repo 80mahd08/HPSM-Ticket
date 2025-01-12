@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function CloseTicket() {
 	const [idTicket, setIdTicket] = useState("");
@@ -21,12 +22,27 @@ export default function CloseTicket() {
 			});
 			const data = await response.json();
 			if (response.ok) {
-				alert("Ticket closed successfully");
+				Swal.fire({
+					title: "Success!",
+					text: "Ticket closed successfully",
+					icon: "success",
+					confirmButtonText: "OK",
+				});
 			} else {
-				alert(data.error);
+				Swal.fire({
+					title: "Error!",
+					text: data.error || "An error occurred while closing the ticket",
+					icon: "error",
+					confirmButtonText: "OK",
+				});
 			}
 		} catch (error) {
-			alert("An error occurred while closing the ticket");
+			Swal.fire({
+				title: "Error!",
+				text: "An error occurred while closing the ticket",
+				icon: "error",
+				confirmButtonText: "OK",
+			});
 		}
 	};
 
@@ -36,7 +52,6 @@ export default function CloseTicket() {
 			<form onSubmit={handleSubmit}>
 				<div>
 					<label>ID Ticket:</label>
-					<br />
 					<input
 						type="text"
 						value={idTicket}
@@ -46,11 +61,11 @@ export default function CloseTicket() {
 				</div>
 				<div>
 					<label>Date Fermeture:</label>
-					<br />
 					<input
-						type="date"
+						type="datetime-local"
 						value={dateFermeture}
 						onChange={(e) => setDateFermeture(e.target.value)}
+						required
 					/>
 				</div>
 				<button type="submit">Close Ticket</button>

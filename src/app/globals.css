@@ -1,4 +1,6 @@
 /* Dark Theme Style */
+/* Reset some default styles */
+
 body {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	background-color: #121212;
@@ -153,4 +155,8 @@ form button:hover {
 
 .chart-container {
 	margin-top: 2rem;
+}
+
+.centered-table {
+	margin: 0 auto;
 }
