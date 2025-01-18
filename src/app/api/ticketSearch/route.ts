@@ -3,11 +3,9 @@ import { searchTickets } from "@/action/action";
 
 export async function POST(request: Request) {
 	try {
-		const { idTicket, type, place, dateOuverture, dateFermeture } =
-			await request.json();
+		const { type, place, dateOuverture, dateFermeture } = await request.json();
 
 		const tickets = await searchTickets({
-			idTicket,
 			type,
 			place,
 			dateOuverture: dateOuverture ? new Date(dateOuverture) : null,

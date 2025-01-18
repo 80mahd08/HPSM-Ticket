@@ -14,9 +14,11 @@ datasource db {
 }
 
 model Ticket {
-  idTicket      String    @id
+  idTicket      Int       @id @default(autoincrement())
   type          String
   place         String
+  pending       Boolean?  @default(false)
+  commentaire   String?
   dateOuverture DateTime?
   dateFermeture DateTime?
 }

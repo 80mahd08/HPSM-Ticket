@@ -4,7 +4,6 @@ import { Ticket } from "@prisma/client";
 import { useState } from "react";
 
 export default function TicketSearch() {
-	const [idTicket, setIdTicket] = useState("");
 	const [type, setType] = useState("");
 	const [place, setPlace] = useState("");
 	const [dateOuverture, setDateOuverture] = useState("");
@@ -21,7 +20,6 @@ export default function TicketSearch() {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					idTicket,
 					type,
 					place,
 					dateOuverture: dateOuverture
@@ -50,18 +48,8 @@ export default function TicketSearch() {
 	return (
 		<>
 			<div className="container">
-				<h1>search</h1>
+				<h1>recherche</h1>
 				<form onSubmit={handleSubmit}>
-					<div>
-						<label>ID Ticket:</label>
-						<input
-							type="text"
-							value={idTicket}
-							onChange={(e) => setIdTicket(e.target.value)}
-							required
-						/>
-					</div>
-
 					<div>
 						<label>Type:</label>
 						<select value={type} onChange={(e) => setType(e.target.value)}>
@@ -154,7 +142,7 @@ export default function TicketSearch() {
 									border={1}>
 									<thead>
 										<tr>
-											<th>Ticket ID</th>
+											<th>ID Ticket</th>
 											<th>Region</th>
 											<th>Problem</th>
 											<th>Opening Time</th>
@@ -162,8 +150,8 @@ export default function TicketSearch() {
 										</tr>
 									</thead>
 									<tbody>
-										{results.map((ticket) => (
-											<tr key={ticket.idTicket}>
+										{results.map((ticket, index) => (
+											<tr key={index}>
 												<td>{ticket.idTicket}</td>
 												<td>{ticket.place}</td>
 												<td>{ticket.type}</td>

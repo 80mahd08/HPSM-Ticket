@@ -59,3 +59,31 @@
 	font-size: 1.2rem;
 	margin-top: 2rem;
 }
+
+.more-display {
+	position: relative;
+	button {
+		padding: 5px 10px;
+		background: transparent;
+		border: 1px solid rgb(187, 134, 252);
+		color: white;
+
+		div {
+			position: absolute;
+			background-color: #1f1f1f;
+			top: 30px;
+			right: 0px;
+			padding: 10px;
+			border: 1px solid rgb(187, 134, 252);
+			display: none;
+		}
+	}
+	button:hover {
+		color: #1f1f1f;
+		background-color: rgb(187, 134, 252);
+		div {
+			display: block;
+			color: white;
+		}
+	}
+}

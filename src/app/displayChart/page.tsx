@@ -50,10 +50,10 @@ export default function DisplayChart() {
 
 	return (
 		<div>
-			<h1>Display Chart</h1>
+			<h1>graphique</h1>
 			<form onSubmit={handleSubmit}>
 				<div>
-					<label>Select Category:</label>
+					<label>Sélectionnez une catégorie:</label>
 					<br />
 					<select
 						value={whatIsBy}
